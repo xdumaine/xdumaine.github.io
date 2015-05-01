@@ -12,3 +12,41 @@ header .spacer {
     border: 1px solid #c0c0c0;
     padding: 30px;
 }
+
+.share-icons {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+    i {
+        font-size: 36px;
+        padding-right: 15px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        max-width: 36px;
+        transition: 0.3s ease-in-out;
+        padding: 5px 15px;
+
+        span {
+            width: 0;
+            overflow: hidden;
+            font-size: 22px;
+        }
+
+        &:hover {
+            max-width: 400px;
+            color: white;
+            background-color: #008dba;
+            border-radius: 5px;
+
+            span {
+                width: auto;
+            }
+        }
+    }
+}
