@@ -11,6 +11,46 @@ header .spacer {
   border: 1px solid #c0c0c0;
   padding: 30px;
 }
+.sample .figure-set {
+  display: flex;
+  align-items: center;
+}
+.sample .figure-set .previous,
+.sample .figure-set .next {
+  flex-shrink: 0;
+  padding: 10px;
+}
+.sample .figure-set figure {
+  max-width: 1000px;
+  margin: 0;
+  transition: max-width 0.3s;
+  overflow: hidden;
+}
+.sample .figure-set figure.collapse {
+  max-width: 0px;
+  visibility: none;
+}
+.fa-html5 {
+  color: #E44D26;
+}
+.fa-css3 {
+  color: #1572B6;
+}
+.fa-javascript {
+  color: #F0DB4F;
+  font-weight: bold;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-style: normal;
+}
+.fa-webrtc {
+  background-image: url("webrtc.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1em;
+}
+.fa-webrtc:before {
+  content: '\A0';
+}
 .share-icons {
   position: fixed;
   left: 10px;
