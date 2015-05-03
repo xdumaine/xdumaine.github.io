@@ -3,7 +3,6 @@ import Test from './test';
 class App {
     constructor() {
         Test.test();
-        //setTimeout(() => window.location = 'http://blog.xdumaine.com', 3000);
 
         $('.figure-set').each((i, figureSet) => {
             $(figureSet).find('figure:not(:first)').addClass('collapse');
