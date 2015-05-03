@@ -55,7 +55,8 @@ var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
 
 var staticFiles = funnel('app/styles', {
     include: [
-        '*.css'
+        '*.css',
+        '*.svg'
     ]
 });
 
