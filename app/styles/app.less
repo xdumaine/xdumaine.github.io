@@ -11,6 +11,28 @@ header .spacer {
 .sample {
     border: 1px solid #c0c0c0;
     padding: 30px;
+
+    .figure-set {
+        display: flex;
+        align-items: center;
+
+        .previous, .next {
+            flex-shrink: 0;
+            padding: 10px;
+        }
+
+        figure {
+            max-width: 1000px;
+            margin: 0;
+            transition: max-width .3s;
+            overflow: hidden;
+
+            &.collapse {
+                max-width: 0px;
+                visibility: none;
+            }
+        }
+    }
 }
 
 .share-icons {
