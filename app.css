@@ -22,12 +22,14 @@ header .spacer {
 }
 .sample .figure-set figure {
   max-width: 1000px;
+  max-height: 1000px;
   margin: 0;
   transition: max-width 0.3s;
   overflow: hidden;
 }
 .sample .figure-set figure.collapse {
   max-width: 0px;
+  max-height: 0px;
   visibility: none;
 }
 .fa-html5 {
