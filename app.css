@@ -11,6 +11,9 @@ header .spacer {
   border: 1px solid #c0c0c0;
   padding: 30px;
 }
+.sample.sample-small {
+  padding: 15px;
+}
 .sample .figure-set {
   display: flex;
   align-items: center;
