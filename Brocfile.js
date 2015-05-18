@@ -49,7 +49,7 @@ var concatenatedVendor = concat(vendorTree, {
 var html = pickFiles('app', {
     srcDir: '/',
     destDir: '/',
-    files: ['index.html']
+    files: ['index.html', 'favicon.ico']
 });
 
 var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
