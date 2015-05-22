@@ -4,6 +4,7 @@ var fastBrowserify = require('broccoli-fast-browserify');
 var concat = require('broccoli-concat');
 var mergeTrees = require('broccoli-merge-trees');
 var compileLess = require('broccoli-less-single');
+var autoPrefixer = require('broccoli-autoprefixer');
 var funnel = require('broccoli-funnel');
 
 var srcTree = pickFiles('app/src', {
@@ -54,6 +55,8 @@ var html = pickFiles('app', {
 
 var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
 
+var prefixedStyles = autoPrefixer(styles);
+
 var staticFiles = funnel('app/styles', {
     include: [
         '*.css',
@@ -61,4 +64,4 @@ var staticFiles = funnel('app/styles', {
     ]
 });
 
-module.exports = mergeTrees([html, styles, staticFiles, browserifyTree, concatenatedVendor]);
+module.exports = mergeTrees([html, prefixedStyles, staticFiles, browserifyTree, concatenatedVendor]);
