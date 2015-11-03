@@ -47,6 +47,11 @@ header .spacer {
 .grid-flex-container .grid-flex-cell {
   min-width: 0;
 }
+@media (max-width: 601px) {
+  .grid-flex-container .grid-flex-cell {
+    min-width: 100%;
+  }
+}
 .fa-html5 {
   color: #E44D26;
 }
