@@ -1,4 +1,4 @@
-### An app for stuff™.
+### An app for stuff™
 
 I'm using this home for linking to projects I've worked on, serving as a home for the Xander™ brand.
 
