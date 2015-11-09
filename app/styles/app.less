@@ -4,16 +4,51 @@ html, body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+body {
+    border: none;
+    background-image: url(https://blog.xdumaine.com/content/images/2015/11/xander-wordcloud.png);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.body-container {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
 header .spacer {
     height: 60px;
+}
+
+header {
+    border: none;
+}
+
+header .container {
+    padding: 10px;
+    background-color: white;
 }
 
 .sample {
     border: 1px solid #c0c0c0;
     padding: 30px;
+    background: white;
 
     &.sample-small {
         padding: 15px;
+    }
+
+    @media (max-width: 750px) {
+        & {
+            padding: 10px;
+        }
+
+        & > figure {
+            margin: 1em 10px
+        }
     }
 
     .figure-set {
@@ -72,39 +107,17 @@ header .spacer {
 }
 
 .share-icons {
-    position: fixed;
-    left: 10px;
-    bottom: 10px;
+    font-size: larger;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    border-top: solid 1px #e0e0e0;
+    margin-top: 5px;
+    padding: 5px;
+    padding-bottom: 0;
 
-    i {
-        font-size: 36px;
-        padding-right: 15px;
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        max-width: 36px;
-        transition: 0.3s ease-in-out;
-        padding: 5px 15px;
-
-        span {
-            width: 0;
-            overflow: hidden;
-            font-size: 22px;
-        }
-
-        &:hover {
-            max-width: 400px;
-            color: white;
-            background-color: #008dba;
-            border-radius: 5px;
-
-            span {
-                width: auto;
-            }
-        }
+    @media (max-width: 750px) {
+      a span {
+        display: none;
+      }
     }
 }
