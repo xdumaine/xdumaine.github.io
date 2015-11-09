@@ -4,15 +4,44 @@ body {
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+body {
+  border: none;
+  background-image: url(https://blog.xdumaine.com/content/images/2015/11/xander-wordcloud.png);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.body-container {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
 header .spacer {
   height: 60px;
+}
+header {
+  border: none;
+}
+header .container {
+  padding: 10px;
+  background-color: white;
 }
 .sample {
   border: 1px solid #c0c0c0;
   padding: 30px;
+  background: white;
 }
 .sample.sample-small {
   padding: 15px;
+}
+@media (max-width: 750px) {
+  .sample {
+    padding: 10px;
+  }
+  .sample > figure {
+    margin: 1em 10px;
+  }
 }
 .sample .figure-set {
   display: -webkit-box;
@@ -69,48 +98,21 @@ header .spacer {
   content: '\A0';
 }
 .share-icons {
-  position: fixed;
-  left: 10px;
-  bottom: 10px;
+  font-size: larger;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  border-top: solid 1px #e0e0e0;
+  margin-top: 5px;
+  padding: 5px;
+  padding-bottom: 0;
 }
-.share-icons i {
-  font-size: 36px;
-  padding-right: 15px;
-}
-.share-icons a {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 36px;
-  -webkit-transition: 0.3s ease-in-out;
-          transition: 0.3s ease-in-out;
-  padding: 5px 15px;
-}
-.share-icons a span {
-  width: 0;
-  overflow: hidden;
-  font-size: 22px;
-}
-.share-icons a:hover {
-  max-width: 400px;
-  color: white;
-  background-color: #008dba;
-  border-radius: 5px;
-}
-.share-icons a:hover span {
-  width: auto;
+@media (max-width: 750px) {
+  .share-icons a span {
+    display: none;
+  }
 }
