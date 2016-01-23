@@ -46,9 +46,16 @@ header .container {
     h4, h5 {
         font-family: 'Source Code Pro', ;
     }
+    flex: 1 1 calc(50% - 10px);
 
     &.sample-small {
         padding: 15px;
+
+        @media (max-width: 320px) {
+            & {
+                flex: 1 1 auto;
+            }
+        }
     }
 
     @media (max-width: 750px) {
@@ -87,7 +94,11 @@ header .container {
 }
 
 .grid-flex-container .grid-flex-cell {
-    min-width: 0;
+    margin: 15px;
+
+    @media (max-width: 750px) {
+        margin: 5px 0;
+    }
 }
 
 .fa-html5 {
