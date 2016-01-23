@@ -46,10 +46,11 @@ header .container {
     h4, h5 {
         font-family: 'Source Code Pro', ;
     }
-    flex: 1 1 calc(50% - 10px);
+    flex: 1 1 auto;
 
     &.sample-small {
         padding: 15px;
+        flex: 1 1 ~"calc(50% - 30px)";
 
         @media (max-width: 320px) {
             & {
