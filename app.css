@@ -38,9 +38,9 @@ header .container {
   padding: 30px;
   background: white;
   -webkit-box-flex: 1;
-  -webkit-flex: 1 1 calc(40%);
-      -ms-flex: 1 1 calc(40%);
-          flex: 1 1 calc(40%);
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 .sample h4,
 .sample h5 {
@@ -48,6 +48,10 @@ header .container {
 }
 .sample.sample-small {
   padding: 15px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 calc(50% - 30px);
+      -ms-flex: 1 1 calc(50% - 30px);
+          flex: 1 1 calc(50% - 30px);
 }
 @media (max-width: 320px) {
   .sample.sample-small {
