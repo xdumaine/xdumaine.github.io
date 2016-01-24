@@ -18,253 +18,62 @@
 </head>
 <body>
     <div class="body-container">
-        <header role="banner">
+        <div data-bind="foreach: cards">
+            <span data-bind="text: title"></span>
+        </div>
+        <header role="banner" data-bind="with: header">
             <div class="spacer"></div>
             <div class="container">
                 <h3>.-... .. ..--. . / .. ... / -.-. --- -.. .</h3>
                 <span>from Xander Dumaine</span>(more <a href="https://blog.xdumaine.com/about-me/">about me</a>)
-                <div class="share-icons">
-                    <a href="https://github.com/xdumaine">
-                        <i class="fa fa-github"></i>
-                        <span>Github</span>
-                    </a>
-                    <a href="https://blog.xdumaine.com">
-                        <i class="fa fa-rss"></i>
-                        <span>Blog</span>
-                    </a>
-                    <a href="https://stackoverflow.com/users/381422/xdumaine">
-                        <i class="fa fa-stack-overflow"></i>
-                        <span>StackOverflow</span>
-                    </a>
-                    <a href="https://careers.stackoverflow.com/dumaine">
-                        <i class="fa fa-stack-exchange"></i>
-                        <span>Résumé</span>
-                    </a>
-                    <a href="https://slides.xdumaine.com">
-                        <i class="fa fa-tv"></i>
-                        <span>Slides</span>
-                    </a>
-                    <a href="https://twitter.com/xanderdumaine">
-                        <i class="fa fa-twitter"></i>
-                        <span>Twitter</span>
+                <div class="share-icons" data-bind="foreach: links">
+                    <a data-bind="attr: { href: target }">
+                        <i data-bind="attr: { class: iconClass }"></i>
+                        <span data-bind="text: title"></span>
                     </a>
                 </div>
             </div>
         </header>
-        <div class="container">
+        <div class="container" data-bind="with: projects">
             <section>
-                <div class="grid-flex-container">
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://morsecode.xdumaine.com" title="demo">
-                                <i class="fa fa-magic"></i>
-                            </a>
-                            <a href="https://github.com/xdumaine/webrtc-dtmf-morsecode/" title="source">
-                                <i class="fa fa-file-code-o"></i>
+                <div data-bind="foreach: projects" class="grid-flex-container">
+                    <div class="grid-flex-cell sample" data-bind="css: { 'sample-small': !wide() }">
+                        <h5 class="pull-right" data-bind="foreach: referenceLinks">
+                            <a data-bind="attr: { href: target, title: title }">
+                                <i data-bind="attr: { class: iconClass }"></i>
                             </a>
                         </h5>
-                        <h5>WebRTC DTMF Morse Code</h5>
-                        <figure>
-                            <img src="https://cloud.githubusercontent.com/assets/833911/12530692/d14b1ec6-c1b4-11e5-884f-d7c6b88eb1a0.png" title="morse code"/>
-                            <figcaption>
-                                I decided to put together a demo that converts text into morse code,
-                                then sends it over a WebRTC peerconnection using DTMF tones with
-                                varying delays. It's not really useful, but it's a sort of experiment
-                                and demo of what's possible.
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://css.xdumaine.com/" title="demo">
-                                <i class="fa fa-magic"></i>
-                            </a>
-                            <a href="https://github.com/xdumaine/xander.css/" title="source">
-                                <i class="fa fa-file-code-o"></i>
-                            </a>
-                        </h5>
-                        <h5>CSS</h5>
-                        <figure>
-                            <a href="https://css.xdumaine.com">
-                                <div class="controller"><div></div></div>
-                            </a>
-                            <figcaption>
-                                I'm working on a series of CSS illustrations
-                                inspired by <a href="http://a.singlediv.com" target="_blank">a.singlediv.com</a>.
-                                All CSS is written by me, using my own knowledge supplemented by docs and
-                                examples online. No snippets are reused. As of now, all illustrations use a single tag.
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample">
-                        <h4 class="pull-right">
-                            <i class="fa fa-html5"></i>
-                            <i class="fa fa-css3"></i>
-                            <i class="fa fa-javascript">JS</i>
-                            <i class="fa fa-webrtc"></i>
+                        <h5 class="pull-right" data-bind="foreach: techItems">
+                            <i data-bind="attr: { class: 'fa fa-' + $data }">
+                                <!-- ko if: $data === 'javascript' -->
+                                JS
+                                <!-- /ko -->
+                            </i>
                         </h4>
-                        <h4>Collaborate - Interactive Intelligence</h4>
-                        <div class="figure-set">
-                            <a href="#" class="previous"><i class="fa fa-chevron-left"></i></a>
+                        <h5 data-bind="text: title"></h5>
+                        <!-- ko ifnot: figureSet() && figureSet().length -->
                             <figure>
-                                <img src="https://cloud.githubusercontent.com/assets/833911/7447918/8f74c89a-f1d9-11e4-863e-4a431477fa25.jpg" alt="collaborate"/>
-                                <figcaption>
-                                    XMPP based chat with multi-party WebRTC video calling. I work with an outstanding team to refine and improve our team chat.
-                                    I headed up an effort to supercharge our app with video calling, based on open source libraries and powered by WebRTC. I work
-                                    with javascript (es6 and coffeescript, too!), CSS (LESS), and HTML5 in the Ember.js front-end. As a part of this project, I
-                                    contribute to <a href="https://github.com/andyet/SimpleWebRTC" target="_blank">SimpleWebRTC</a> and the
-                                    <a href="https://github.com/otalk">OTalk modules</a> like Jingle.js.
-                                </figcaption>
+                                <!-- ko if: imageSource -->
+                                <img data-bind="attr: { src: imageSource, title: title }"/>
+                                <!-- /ko -->
+                                <!-- ko if: liveDemo -->
+                                <span data-bind="html: liveDemo"></span>
+                                <!-- /ko -->
+                                <figcaption data-bind="html: description"></figcaption>
                             </figure>
-                            <figure>
-                                <img src="https://cloud.githubusercontent.com/assets/833911/7447905/3d33eef8-f1d9-11e4-9c37-b6dafdd697fe.jpg" alt="collaborate"/>
-                                <figcaption>
-                                    Plugin-less screen sharing. Using browser screen capture APIs and extensions, where necessary.
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="https://cloud.githubusercontent.com/assets/833911/7447904/3d32bbdc-f1d9-11e4-9e0f-ac87712f987c.jpg" alt="collaborate"/>
-                                <figcaption>
-                                    Peer-to-peer limitations (mesh network) slowed us down, but didn't stop me. I delivered a working solution optimized for small
-                                    conferences to get the product out the door, and powering almost all of our small video conference needs. In the meantime,
-                                    I'm working with experts to integrate with a single-point selective forwarding server for an even better experience.
-                                </figcaption>
-                            </figure>
-                            <a href="#" class="next"><i class="fa fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5>Halloween 2015</h5>
-                        <figure>
-                            <a href="https://i.imgur.com/mAPCH1P.jpg">
-                                <img src="https://i.imgur.com/mAPCH1P.jpg" title="planet express ship"/>
-                            </a>
-                            <figcaption>
-                                For Halloween this year, I dressed as Fry from Futurama.
-                                I built Bender's head using syrofoam, paper, and paint.
-                                I decorated my office like the Planet Express ship with
-                                star-backdrop windows, a hatch door with logo, and a
-                                full-sized Slurm machine.
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://www.xdumaine.com/enumerateDevices/test/" title="demo">
-                                <i class="fa fa-magic"></i>
-                            </a>
-                            <a href="https://github.com/xdumaine/enumerateDevices/" title="source">
-                                <i class="fa fa-file-code-o"></i>
-                            </a>
-                        </h5>
-                        <h5>enumerateDevices</h5>
-                        <figure>
-                            <img src="https://cloud.githubusercontent.com/assets/833911/7502753/6510060c-f40c-11e4-9d6c-4c0e74ca676d.png" title="enumerateDevices"/>
-                            <figcaption>
-                                A WebRTC helper library for normalizing browser APIs for enumerating media devices.
-                            </figcaption>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://blog.xdumaine.com">
-                                <i class="fa fa-magic"></i>
-                            </a>
-                            <a href="https://github.com/xdumaine/ghost-aside">
-                                <i class="fa fa-file-code-o"></i>
-                            </a>
-                        </h5>
-                        <h5>Aside (Ghost Theme)</h5>
-                        <figure>
-                            <img src="https://cloud.githubusercontent.com/assets/833911/7502961/c8af4bcc-f40d-11e4-8f1f-dca16225c3b6.jpg" title="Aide (Ghost)"/>
-                            <figcaption>
-                                Aside is a <a href="http://ghost.org">Ghost</a> theme that powers my blog. Makes use of handlebars, CSS3, and the Ghost theme API
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://twitter.com/xanderdumaine/status/660918113802846208">
-                                <i class="fa fa-magic"></i>
-                            </a>
-                            <a href="https://github.com/xdumaine/esplora-neopixels">
-                                <i class="fa fa-file-code-o"></i>
-                            </a>
-                        </h5>
-                        <h5>Motorcycle LED Effects with Arduino</h5>
-                        <figure>
-                            <img src="https://cloud.githubusercontent.com/assets/833911/10873518/d164025e-80e3-11e5-8ee3-086d56c32b9b.JPG"/>
-                            <figcaption>
-                                Arduino Esplora board with Neopixels to add LED effects to motorcycle.
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://slides.xdumaine.com/sfu/">
-                                <i class="fa fa-television"></i>
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=wwhT_Y0ex0A" target="_blank">
-                                <i class="fa fa-youtube-play"></i>
-                            </a>
-                        </h5>
-                        <h5>WebRTC with SFU</h5>
-                        <figure>
-                            <img src="https://cloud.githubusercontent.com/assets/833911/10873501/a1d1657c-80e3-11e5-9f2c-a37d29349ded.png"/>
-                            <figcaption>
-                                A series of slides I put together around the architecture of using an SFU
-                                like Jitsi VideoBridge for building better multipoint video conferencing.
-                                Presented at
-                                <a href="http://www.meetup.com/Triangle-WebRTC/" target="_blank">the meetup I host.</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://twitter.com/xanderdumaine/status/660918113802846208">
-                                <i class="fa fa-magic"></i>
-                            </a>
-                        </h5>
-                        <h5>Triangle WebRTC</h5>
-                        <figure>
-                            <img src="https://cloud.githubusercontent.com/assets/833911/11945493/6b2487cc-a81e-11e5-901a-4b9b81f8044f.png"/>
-                            <figcaption>
-                                A meetup group discussing technical details, innovation, and development of WebRTC.
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://slides.xdumaine.com/webrtc-nv/">
-                                <i class="fa fa-television"></i>
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=25PfgQ0FNwM" target="_blank">
-                                <i class="fa fa-youtube-play"></i>
-                            </a>
-                        </h5>
-                        <h5>The Future of WebRTC</h5>
-                        <figure>
-                            <img src="https://cloud.githubusercontent.com/assets/833911/11611207/9f4199e6-9b8f-11e5-8d60-0dce135af9b9.png"/>
-                            <figcaption>
-                                Slides discussing the current state of WebRTC implementation and the current state of spec definition,
-                                which will form the future of WebRTC and ORTC.
-                                Presented at
-                                <a href="http://www.meetup.com/Triangle-WebRTC/" target="_blank">the meetup I host.</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="grid-flex-cell sample sample-small">
-                        <h5 class="pull-right">
-                            <a href="https://blog.xdumaine.com/using-webtask-io-for-secure-api-tokens/" title="source">
-                                <i class="fa fa-file-code-o"></i>
-                            </a>
-                        </h5>
-                        <h5>Secure Client Authentication with Webtask</h5>
-                        <figure>
-                            <img src="https://blog.xdumaine.com/content/images/2015/07/Screen-Shot-2015-07-19-at-7-35-19-PM.png"/>
-                            <figcaption>
-                                Secure authentication to an API from a serverless javascript application using Webtask.io
-                            </figcaption>
-                        </figure>
+                        <!-- /ko -->
+                        <!-- ko if: figureSet() && figureSet().length -->
+                            <div class="figure-set">
+                                <a href="#" class="previous" data-bind="click: previous"><i class="fa fa-chevron-left"></i></a>
+                                <!-- ko foreach: figureSet -->
+                                <figure data-bind="css: { collapse: collapse }">
+                                    <img data-bind="attr: { title: $parent.title, src: imageSource }"/>
+                                    <figcaption data-bind="html: description"></figcaption>
+                                </figure>
+                                <!-- /ko -->
+                                <a href="#" class="next" data-bind="click: next"><i class="fa fa-chevron-right"></i></a>
+                            </div>
+                        <!-- /ko -->
                     </div>
                 </div>
             </section>
