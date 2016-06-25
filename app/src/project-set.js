@@ -3,6 +3,17 @@ import ReferenceLinks from './reference-links';
 
 class ProjectSet {
     constructor() {
+        const webSpeechExperiments = new Project({
+            title: 'Web Speech Experiments',
+            referenceLinks: ReferenceLinks.create({
+                demo: 'https://www.xdumaine.com/web-speech-experiments/',
+                source: 'https://github.com/xdumaine/web-speech-experiments'
+            }),
+            imageSource: 'https://cloud.githubusercontent.com/assets/833911/16359689/8a0fedf8-3b0c-11e6-8b25-fb0cdfa7cf1a.png',
+            description: `Starting from Google webkitSpeechRecognition example, and combining the experimental API
+                with the speechSynthesis API, I made an example of an app that both listens to and speaks to users`
+        });
+
         const morseCode = new Project({
             title: 'WebRTC DTMF Morse Code',
             referenceLinks: ReferenceLinks.create({
@@ -143,10 +154,11 @@ class ProjectSet {
         });
 
         this.projects = ko.observableArray([
+            webSpeechExperiments,
             morseCode,
             singleDivCss,
             collaborate,
-            halloween,
+            //halloween,
             enumerateDevices,
             aside,
             motorcycle,
