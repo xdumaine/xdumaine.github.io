@@ -14,12 +14,6 @@ class App {
         this.header = new Header();
         this.projects = new ProjectSet();
 
-        this.cards = ko.observableArray([
-            new Card({title: 'foo'}),
-            new Card({title: 'bar'}),
-            new Card({title: 'baz'})
-        ]);
-
         ko.applyBindings(this, elem);
     }
 }
