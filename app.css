@@ -6,11 +6,16 @@ body {
 }
 body {
   border: none;
-  background-image: url(https://blog.xdumaine.com/content/images/2015/11/xander-wordcloud.png);
-  background-size: cover;
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background-color: #337341;
+}
+a {
+  color: #4caf50;
+}
+a:hover {
+  color: #2E7D32;
 }
 .body-container {
   height: 100%;
