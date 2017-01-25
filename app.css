@@ -80,7 +80,7 @@ header .container {
       -ms-flex: 1 1 calc(50% - 30px);
           flex: 1 1 calc(50% - 30px);
 }
-@media (max-width: 320px) {
+@media (max-width: 750px) {
   .sample.sample-small {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
