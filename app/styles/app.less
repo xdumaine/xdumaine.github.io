@@ -57,6 +57,18 @@ header .container {
   }
   flex: 1 1 auto;
 
+  @media (max-width: 750px) {
+    h5 a {
+      font-size: 25px;
+      display: inline-block;
+      height: 48px;
+      width: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
   &.sample-small {
     padding: 15px;
     flex: 1 1 ~"calc(50% - 30px)";
