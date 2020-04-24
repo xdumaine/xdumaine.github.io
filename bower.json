@@ -2,6 +2,7 @@
   "name": "es6-template",
   "dependencies": {
     "lodash": "~3.4.0",
-    "knockout": "knockoutjs#~3.4.0"
+    "knockout": "knockoutjs#~3.4.0",
+    "jquery": "~3.5.0"
   }
 }
