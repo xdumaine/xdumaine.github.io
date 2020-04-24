@@ -9,7 +9,7 @@ class ProjectSet {
         demo: "https://instagram.com/xanderdumakes",
       }),
       script:
-        '<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/5379a8b11a0a57ec841fc6e2712963a2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>',
+        '<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="http://lightwidget.com/widgets/5379a8b11a0a57ec841fc6e2712963a2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>',
     });
 
     const webSpeechExperiments = new Project({
