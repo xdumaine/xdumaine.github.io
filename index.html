@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="yeti-guide.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="app.css?1">
+    <link rel="stylesheet" type="text/css" href="app.css?t=1">
     <link rel="stylesheet" type="text/css" href="https://css.xdumaine.com/drawings.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Xander Dumaine | Making the world a little bit better, one byte at a time.</title>
@@ -48,7 +48,7 @@
                             </i>
                         </h4>
                         <h5 data-bind="text: title"></h5>
-                        <!-- ko if: script() -->
+                        <!-- ko if: script -->
                         <div data-bind="html: script"></div>
                         <!-- /ko -->
                         <!-- ko ifnot: script() && figureSet() && figureSet().length -->
@@ -79,7 +79,7 @@
             </section>
         </div>
     </div>
-    <script type="text/javascript" src="vendor.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="vendor.js?t=1"></script>
+    <script type="text/javascript" src="app.js?t=1"></script>
 </body>
 </html>
