@@ -44,10 +44,8 @@ header .container {
   padding: 30px;
   background: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
 }
 .sample h4,
 .sample h5 {
@@ -59,33 +57,23 @@ header .container {
     display: inline-block;
     height: 48px;
     width: 48px;
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
 }
 .sample.sample-small {
   padding: 15px;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 calc(50% - 30px);
-      -ms-flex: 1 1 calc(50% - 30px);
-          flex: 1 1 calc(50% - 30px);
+  -ms-flex: 1 1 calc(50% - 30px);
+      flex: 1 1 calc(50% - 30px);
 }
 @media (max-width: 750px) {
   .sample.sample-small {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
   }
 }
 @media (max-width: 750px) {
@@ -97,28 +85,22 @@ header .container {
   }
 }
 .sample .figure-set {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .sample .figure-set .previous,
 .sample .figure-set .next {
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   padding: 10px;
 }
 .sample .figure-set figure {
   max-width: 1000px;
   max-height: 1000px;
   margin: 0;
-  -webkit-transition: max-width 0.3s;
-          transition: max-width 0.3s;
+  transition: max-width 0.3s;
   overflow: hidden;
 }
 .sample .figure-set figure.collapse {
@@ -156,18 +138,12 @@ header .container {
   content: '\A0';
 }
 .controller {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   padding: 20px;
   height: 250px;
   zoom: 0.5;
@@ -175,13 +151,10 @@ header .container {
 }
 .share-icons {
   font-size: larger;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   border-top: solid 1px #e0e0e0;
   margin-top: 5px;
   padding: 5px;
