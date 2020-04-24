@@ -48,12 +48,13 @@
                             </i>
                         </h4>
                         <h5 data-bind="text: title"></h5>
-                        <!-- ko if: script -->
-                        <div data-bind="html: script"></div>
-                        <!-- /ko -->
-                        <!-- ko ifnot: script() && figureSet() && figureSet().length -->
+                        
+                        <!-- ko ifnot: figureSet() && figureSet().length -->
                             <figure>
-                                <!-- ko if: imageSource -->
+                                <!-- ko if: script -->
+                                <div data-bind="html: script"></div>
+                                <!-- /ko -->
+                                <!-- ko if: !script() && imageSource -->
                                 <img data-bind="attr: { src: imageSource, title: title }"/>
                                 <!-- /ko -->
                                 <!-- ko if: liveDemo -->
@@ -62,7 +63,7 @@
                                 <figcaption data-bind="html: description"></figcaption>
                             </figure>
                         <!-- /ko -->
-                        <!-- ko if: !script() && figureSet() && figureSet().length -->
+                        <!-- ko if: figureSet() && figureSet().length -->
                             <div class="figure-set">
                                 <a href="#" class="previous" data-bind="click: previous"><i class="fa fa-chevron-left"></i></a>
                                 <!-- ko foreach: figureSet -->
