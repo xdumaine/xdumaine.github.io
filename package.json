@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "echo \"Starting the server\" && npm install && bower install && node_modules/.bin/broccoli serve --port 8880"
+    "start": "echo \"Starting the server\" && npm install && npx bower install && node_modules/.bin/broccoli serve --port 8880"
   },
   "devDependencies": {
     "broccoli": "^0.15.0",
