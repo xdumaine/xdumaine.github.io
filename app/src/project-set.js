@@ -177,16 +177,16 @@ class ProjectSet {
 
     this.projects = ko.observableArray([
       woodWorking,
+      singleDivCss,
       webSpeechExperiments,
       morseCode,
-      singleDivCss,
-      collaborate,
+      // collaborate,
       //halloween,
       enumerateDevices,
       aside,
       motorcycle,
       sfu,
-      triangleWebrtc,
+      // triangleWebrtc,
       futureWebrtc,
       webtask,
     ]);
