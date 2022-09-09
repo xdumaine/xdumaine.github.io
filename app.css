@@ -15,7 +15,7 @@ a {
   color: #4caf50;
 }
 a:hover {
-  color: #2e7d32;
+  color: #2E7D32;
 }
 .body-container {
   height: 100%;
@@ -32,7 +32,7 @@ header .spacer {
 }
 header {
   border: none;
-  font-family: "Source Code Pro";
+  font-family: 'Source Code Pro';
 }
 header .container {
   padding: 10px;
@@ -49,7 +49,7 @@ header .container {
 }
 .sample h4,
 .sample h5 {
-  font-family: "Source Code Pro";
+  font-family: 'Source Code Pro';
 }
 @media (max-width: 750px) {
   .sample h5 a {
@@ -81,7 +81,7 @@ header .container {
     padding: 10px;
   }
   .sample > figure {
-    margin: 0;
+    margin: 1em 10px;
   }
 }
 .sample .figure-set {
@@ -110,7 +110,6 @@ header .container {
 }
 .grid-flex-container .grid-flex-cell {
   margin: 15px;
-  max-width: 100%;
 }
 @media (max-width: 750px) {
   .grid-flex-container .grid-flex-cell {
@@ -118,13 +117,13 @@ header .container {
   }
 }
 .fa-html5 {
-  color: #e44d26;
+  color: #E44D26;
 }
 .fa-css3 {
-  color: #1572b6;
+  color: #1572B6;
 }
 .fa-javascript {
-  color: #f0db4f;
+  color: #F0DB4F;
   font-weight: bold;
   font-family: "Lucida Console", Monaco, monospace;
   font-style: normal;
@@ -136,7 +135,7 @@ header .container {
   width: 1em;
 }
 .fa-webrtc:before {
-  content: "\A0";
+  content: '\A0';
 }
 .controller {
   display: -ms-flexbox;
@@ -147,11 +146,8 @@ header .container {
       align-items: center;
   padding: 20px;
   height: 250px;
+  zoom: 0.5;
   min-width: 150px;
-  width: 100%;
-}
-.controller > div {
-  transform: scale(0.75) !important;
 }
 .share-icons {
   font-size: larger;
